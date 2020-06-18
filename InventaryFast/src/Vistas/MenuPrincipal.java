@@ -51,6 +51,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         gestionModificarProducto = new javax.swing.JMenuItem();
         gestionEliminarProducto = new javax.swing.JMenuItem();
         gestionListarProductos = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +60,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jdpEscritorio.setLayout(jdpEscritorioLayout);
         jdpEscritorioLayout.setHorizontalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 667, Short.MAX_VALUE)
+            .addGap(0, 562, Short.MAX_VALUE)
         );
         jdpEscritorioLayout.setVerticalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,7 +132,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ventas1.png"))); // NOI18N
         jMenu3.setText("Proveedores");
-        jMenu3.setActionCommand("Proveedores");
         jMenu3.setAlignmentX(0.0F);
         jMenu3.setFocusable(false);
         jMenu3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -206,6 +207,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(gestionProductos);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/caja1.png"))); // NOI18N
+        jMenu1.setText("Caja");
+        jMenu1.setAlignmentX(0.0F);
+        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jMenu1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jMenu1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        jMenuItem1.setText("Venta");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -224,6 +244,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void sesionCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sesionCerrarSesionActionPerformed
         // TODO add your handling code here:
+        InicioSesion ventanaInicioSesion = new InicioSesion();
+        this.setVisible(false);
+        ventanaInicioSesion.setVisible(true);
     }//GEN-LAST:event_sesionCerrarSesionActionPerformed
 
     private void gestionAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionAgregarUsuarioActionPerformed
@@ -329,6 +352,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_gestionModificarProductoActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        Venta ventanaVenta = new Venta();
+        jdpEscritorio.add(ventanaVenta);
+        ventanaVenta.show();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -379,8 +409,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenuItem gestionModificarUsuario;
     private javax.swing.JMenu gestionProductos;
     private javax.swing.JMenu gestionUsuarios;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     public static javax.swing.JDesktopPane jdpEscritorio;
     private javax.swing.JMenuItem sesionCerrarSesion;
     private javax.swing.JMenu sesionCierre;

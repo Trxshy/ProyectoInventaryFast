@@ -54,6 +54,11 @@ public class InicioSesion extends javax.swing.JFrame {
         });
 
         btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
 
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +132,9 @@ public class InicioSesion extends javax.swing.JFrame {
                 char[] arrayPass = jpfcontrasenia.getPassword();
                 String pass = new String(arrayPass);
                 if(controller.validarUsuario(txtUser.getText(), pass)){
-                    
+                    MenuPrincipal ventanaMenuPrincipal = new MenuPrincipal();
+                    ventanaMenuPrincipal.setVisible(true);
+                    this.setVisible(false);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
@@ -135,6 +142,11 @@ public class InicioSesion extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     /**
      * @param args the command line arguments
