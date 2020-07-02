@@ -215,6 +215,8 @@ public class ModificarUsuario extends javax.swing.JInternalFrame {
             limpiarCajas();
         } catch (SQLException ex) {
             Logger.getLogger(ModificarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModificarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
@@ -226,6 +228,8 @@ public class ModificarUsuario extends javax.swing.JInternalFrame {
             ventanaModificarUsuarioLista.show();
             this.setVisible(false);
         } catch (SQLException ex) {
+            Logger.getLogger(ModificarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ModificarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
         

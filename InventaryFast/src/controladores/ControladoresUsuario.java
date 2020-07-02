@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class ControladoresUsuario {
 //Usuario user = new Usuario(); 
-        public void agregarUsuario(Usuario usuario) throws SQLException{
+        public void agregarUsuario(Usuario usuario) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         
@@ -34,7 +34,7 @@ public class ControladoresUsuario {
                 }
        
     }
-    public void modificarUsuario(Usuario usuario, String id) throws SQLException{
+    public void modificarUsuario(Usuario usuario, String id) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         PreparedStatement ps = cn.prepareStatement("UPDATE mydb.usuario SET run = ?,digitoverificador = ?, nombre =?, apePaterno=?, apeMaterno=?, email=?, nomUsu=?,clave=?, Ti_Usu_idTiUsu = (select idTiUsu from ti_usu WHERE nomTiUsu = ?) WHERE mydb.usuario.idUsu = ?");
@@ -50,7 +50,7 @@ public class ControladoresUsuario {
         ps.setString(10, id);
         ps.executeUpdate();
     }
-    public void eliminarUsuario(String run) throws SQLException{
+    public void eliminarUsuario(String run) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         PreparedStatement ps = cn.prepareStatement("DELETE from mydb.usuario WHERE run = ?");

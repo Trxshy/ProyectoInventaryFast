@@ -56,6 +56,10 @@ public class AgregarProveedor extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jLabel1.setText("Rut:");
 
         jLabel2.setText("Nombre:");
@@ -146,11 +150,16 @@ public class AgregarProveedor extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "El rut no puede contener mas de 8 digitos.");
         }
         try {
-            controller.agregarProveedor(prov);
-            limpiarCajas();
-        } catch (SQLException ex) {
+
+                controller.agregarProveedor(prov);
+                limpiarCajas();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(AgregarProveedor.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
             Logger.getLogger(AgregarProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
+            
+
     }//GEN-LAST:event_btnAgregarActionPerformed
 
 

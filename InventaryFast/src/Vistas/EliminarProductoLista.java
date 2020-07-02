@@ -18,7 +18,7 @@ public class EliminarProductoLista extends javax.swing.JInternalFrame {
      * Creates new form EliminarProductoLista
      */
     ControladorTablaProducto controller = new ControladorTablaProducto();
-    public EliminarProductoLista() throws SQLException {
+    public EliminarProductoLista() throws SQLException, ClassNotFoundException {
         initComponents();
         controller.mostrar(tblListarProducto);
     }

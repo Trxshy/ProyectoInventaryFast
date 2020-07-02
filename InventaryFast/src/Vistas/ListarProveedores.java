@@ -21,7 +21,7 @@ public class ListarProveedores extends javax.swing.JInternalFrame {
      * Creates new form ListarProveedores
      */
     ControladorTablaProveedor controller = new ControladorTablaProveedor();
-    public ListarProveedores() throws SQLException {
+    public ListarProveedores() throws SQLException, ClassNotFoundException {
         initComponents();
         setTitle("Lista proveedores");
         controller.mostrar(listaProveedores);
@@ -39,6 +39,10 @@ public class ListarProveedores extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         listaProveedores = new javax.swing.JTable();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         listaProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

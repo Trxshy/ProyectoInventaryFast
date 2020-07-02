@@ -18,7 +18,7 @@ public class ListarProducto extends javax.swing.JInternalFrame {
      * Creates new form ListarProducto
      */
     ControladorTablaProducto controller = new ControladorTablaProducto();
-    public ListarProducto() throws SQLException {
+    public ListarProducto() throws SQLException, ClassNotFoundException {
         initComponents();
         controller.mostrar(tblListaProductos);
     }
@@ -34,6 +34,10 @@ public class ListarProducto extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaProductos = new javax.swing.JTable();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         tblListaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

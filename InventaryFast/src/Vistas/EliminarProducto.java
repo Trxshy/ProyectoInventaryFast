@@ -172,6 +172,8 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
             controller.eliminarProducto(txtID.getText());
         } catch (SQLException ex) {
             Logger.getLogger(EliminarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(EliminarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -182,6 +184,8 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
             ventanaEliminarProductoLista.show();
             this.setVisible(false);
         } catch (SQLException ex) {
+            Logger.getLogger(EliminarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(EliminarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnVolverActionPerformed

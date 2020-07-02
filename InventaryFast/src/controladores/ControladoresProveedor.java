@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class ControladoresProveedor {
   
-        public void agregarProveedor(Proveedor prov) throws SQLException{
+        public void agregarProveedor(Proveedor prov) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         try{
@@ -35,7 +35,7 @@ public class ControladoresProveedor {
         }
       
     }
-    public void modificarProveedor(Proveedor prov, String id)throws SQLException{
+    public void modificarProveedor(Proveedor prov, String id)throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         try{
@@ -52,7 +52,7 @@ public class ControladoresProveedor {
             
         }
         }
-    public void eliminarProveedor(String id)throws SQLException {
+    public void eliminarProveedor(String id)throws SQLException, ClassNotFoundException {
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         PreparedStatement ps = cn.prepareStatement("DELETE FROM mydb.proveedor WHERE idProveedor = ?");

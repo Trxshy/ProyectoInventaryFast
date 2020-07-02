@@ -138,6 +138,8 @@ public class InicioSesion extends javax.swing.JFrame {
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
             }
         
         }

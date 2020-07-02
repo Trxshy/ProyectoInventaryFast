@@ -23,7 +23,7 @@ public class ListarUsuarios extends javax.swing.JInternalFrame {
      */
     ControladorTablaUsuario controller = new ControladorTablaUsuario();
     
-    public ListarUsuarios() throws SQLException{
+    public ListarUsuarios() throws SQLException, ClassNotFoundException{
         initComponents();
         controller.mostrar(tblLista);
     }

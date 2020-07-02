@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class ControladoresProducto {
  
-        public void agregarProducto(Producto prod) throws SQLException{
+        public void agregarProducto(Producto prod) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         
@@ -34,7 +34,7 @@ public class ControladoresProducto {
         ps.executeUpdate();
         JOptionPane.showMessageDialog(null, "Agregado correctamente.");
     }
-    public void modificarProducto(Producto prod, String id)throws SQLException{
+    public void modificarProducto(Producto prod, String id)throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         PreparedStatement ps = cn.prepareStatement("UPDATE mydb.producto SET nbrePro=?,precio=?,codBarra=?, (select idCateg from mydb.categoria where nomCateg = ?) ,(select cantidad from mydb.stock where stock.idStock = producto.Stock_idStock) = ? WHERE idProd = ?");
@@ -49,7 +49,7 @@ public class ControladoresProducto {
         ps.executeUpdate();
         JOptionPane.showMessageDialog(null, "Modificado correctamnte");
     }
-    public void eliminarProducto(String id)throws SQLException{
+    public void eliminarProducto(String id)throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         PreparedStatement ps = cn.prepareStatement("DELETE FROM mydb.producto WHERE idProd = ?");
@@ -58,11 +58,11 @@ public class ControladoresProducto {
         JOptionPane.showMessageDialog(null, "Eliminado correctamente.");
     
     }
-    public int agregarStock (int stock) throws SQLException{
+    public int agregarStock (int stock) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         int valor = 0;
-        PreparedStatement ps = cn.prepareStatement("INSERT INTO mydb.stock (cantidad) VALUES (?)",PreparedStatement.RETURN_GENERATED_KEYS);
+        PreparedStatement ps = cn.prepareStatement("INSERT INTO mydb.stock (cantidad) VALUES (?)");
         ps.setInt(1, stock);
         ps.executeUpdate();
         if(ps.getGeneratedKeys().first()){

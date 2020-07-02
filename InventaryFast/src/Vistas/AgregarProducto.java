@@ -57,6 +57,10 @@ public class AgregarProducto extends javax.swing.JInternalFrame {
         cmbCategoria = new javax.swing.JComboBox();
         btnAgregar = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Agregar Producto");
 
@@ -137,6 +141,8 @@ public class AgregarProducto extends javax.swing.JInternalFrame {
             controller.agregarProducto(prod);
             limpiarCajas();
         } catch (SQLException ex) {
+            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarActionPerformed

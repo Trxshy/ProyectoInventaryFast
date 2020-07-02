@@ -49,6 +49,10 @@ public class EliminarProveedor extends javax.swing.JInternalFrame {
         btnEliminar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Eliminar Proveedor");
 
@@ -174,6 +178,8 @@ public class EliminarProveedor extends javax.swing.JInternalFrame {
             controller.eliminarProveedor(txtId.getText());
         } catch (SQLException ex) {
             Logger.getLogger(EliminarProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(EliminarProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -185,6 +191,8 @@ public class EliminarProveedor extends javax.swing.JInternalFrame {
             ventanaEliminarProveedorLista.show();
             this.setVisible(false);
         } catch (SQLException ex) {
+            Logger.getLogger(EliminarProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(EliminarProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnVolverActionPerformed

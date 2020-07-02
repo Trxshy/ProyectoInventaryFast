@@ -54,6 +54,10 @@ public class ModificarProducto extends javax.swing.JInternalFrame {
         btnModificar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Modificar Producto");
 
@@ -165,6 +169,8 @@ public class ModificarProducto extends javax.swing.JInternalFrame {
             controller.modificarProducto(prod, txtID.getText());
         } catch (SQLException ex) {
             Logger.getLogger(ModificarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModificarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
@@ -176,6 +182,8 @@ public class ModificarProducto extends javax.swing.JInternalFrame {
             ventanaModificarProductoLista.show();
             this.setVisible(false);
         } catch (SQLException ex) {
+            Logger.getLogger(ModificarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ModificarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnVolverActionPerformed

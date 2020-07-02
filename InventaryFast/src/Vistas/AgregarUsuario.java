@@ -217,6 +217,8 @@ public class AgregarUsuario extends javax.swing.JInternalFrame {
                     controller.agregarUsuario(user);
                 } catch (SQLException ex) {
                     Logger.getLogger(AgregarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(AgregarUsuario.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             else{
@@ -224,6 +226,8 @@ public class AgregarUsuario extends javax.swing.JInternalFrame {
                 try {
                     controller.agregarUsuario(user);
                 } catch (SQLException ex) {
+                    Logger.getLogger(AgregarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
                     Logger.getLogger(AgregarUsuario.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

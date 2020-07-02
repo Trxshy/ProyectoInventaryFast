@@ -2,13 +2,13 @@ package Conexion;
 
 import java.sql.*;
 public class ConexionBD {
-    public Connection getConexion() throws SQLException{
+    public Connection getConexion() throws SQLException, ClassNotFoundException{
+
         return conexion();
     }
     
-    private static Connection conexion() throws SQLException{
-        
-            String url ="jdbc:mysql://168.138.149.15:3306/mydb";
+    private static Connection conexion() throws SQLException, ClassNotFoundException{
+            String url ="jdbc:mysql://168.138.149.15:3306/mydb?useSSL=false";
             String user = "inventary_fast";
             String pass = "InventaryFast__//1";
             Connection cn = DriverManager.getConnection(url,user,pass);  
@@ -20,7 +20,7 @@ public class ConexionBD {
         }
      
     }
-    public static ResultSet getTabla(String consulta) throws SQLException{
+    public static ResultSet getTabla(String consulta) throws SQLException, ClassNotFoundException{
         Connection cn = conexion();
         Statement st;
         ResultSet datos = null;

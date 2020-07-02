@@ -70,6 +70,10 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
 
         jLabel10.setText("jLabel10");
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Eliminar Usuario");
 
@@ -222,6 +226,8 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
             controller.eliminarUsuario(txtRun.getText());
             limpiarCajas();
         } catch (SQLException ex) {
+            Logger.getLogger(EliminarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(EliminarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed

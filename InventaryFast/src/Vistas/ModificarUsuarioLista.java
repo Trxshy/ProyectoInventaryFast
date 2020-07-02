@@ -26,7 +26,7 @@ public class ModificarUsuarioLista extends javax.swing.JInternalFrame {
      * Creates new form ModificarUsuarioLista
      */
     ControladorTablaUsuario controller = new ControladorTablaUsuario();
-    public ModificarUsuarioLista() throws SQLException {
+    public ModificarUsuarioLista() throws SQLException, ClassNotFoundException {
         initComponents();
         controller.mostrar(tblUsuarios);
     }
@@ -137,6 +137,8 @@ public class ModificarUsuarioLista extends javax.swing.JInternalFrame {
             // TODO add your handling code here:
             controller.mostrardatos(txtRun.getText(),tblUsuarios);
         } catch (SQLException ex) {
+            Logger.getLogger(ModificarUsuarioLista.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ModificarUsuarioLista.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed

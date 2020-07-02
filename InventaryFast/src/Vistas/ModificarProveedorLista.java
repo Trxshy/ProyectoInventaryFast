@@ -26,7 +26,7 @@ public class ModificarProveedorLista extends javax.swing.JInternalFrame {
      * Creates new form ModificarProveedorLista
      */
     ControladorTablaProveedor controller = new ControladorTablaProveedor();
-    public ModificarProveedorLista() throws SQLException {
+    public ModificarProveedorLista() throws SQLException, ClassNotFoundException {
         initComponents();
         controller.mostrar(tblProveedor);
     }
@@ -47,6 +47,10 @@ public class ModificarProveedorLista extends javax.swing.JInternalFrame {
         txtId = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         tblProveedor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,6 +133,8 @@ public class ModificarProveedorLista extends javax.swing.JInternalFrame {
             // TODO add your handling code here:
             controller.mostrardatos(this.txtId.getText(), tblProveedor);
         } catch (SQLException ex) {
+            Logger.getLogger(ModificarProveedorLista.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ModificarProveedorLista.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed

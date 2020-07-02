@@ -52,6 +52,10 @@ public class ModificarProveedor extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Modificar Proveedor");
 
@@ -160,6 +164,8 @@ public class ModificarProveedor extends javax.swing.JInternalFrame {
         try {
             controller.modificarProveedor(prov, txtID.getText());
         } catch (SQLException ex) {
+            Logger.getLogger(ModificarProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ModificarProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

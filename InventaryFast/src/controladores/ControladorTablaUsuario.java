@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControladorTablaUsuario {
  
-    public void mostrar(JTable nombreTabla) throws SQLException{
+    public void mostrar(JTable nombreTabla) throws SQLException, ClassNotFoundException{
         DefaultTableModel model = new DefaultTableModel();
         ResultSet rs = ConexionBD.getTabla("select idUsu, run,digitoverificador, nomUsu, nombre, apePaterno, apeMaterno, email, nomTiUsu from mydb.usuario join mydb.ti_usu ON (mydb.usuario.Ti_Usu_idTiUsu = mydb.ti_usu.idTiUsu)");
         model.setColumnIdentifiers(new Object[]{"id","run","Digito verificador","nombre usuario","nombre","apellido paterno","apellido materno","email","cargo"});
@@ -37,7 +37,7 @@ public class ControladorTablaUsuario {
             System.out.println(e);
         }
     }
-    public void mostrardatos(String run, JTable nombreTabla) throws SQLException{
+    public void mostrardatos(String run, JTable nombreTabla) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
     DefaultTableModel modelo= new DefaultTableModel();

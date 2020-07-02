@@ -18,7 +18,7 @@ import java.sql.Statement;
  */
 public class ControladorInicioSesion {
 
-    public boolean validarUsuario(String user, String pass) throws SQLException{
+    public boolean validarUsuario(String user, String pass) throws SQLException, ClassNotFoundException{
         ConexionBD con = new ConexionBD();
         Connection cn = con.getConexion();
         Statement st = cn.createStatement();
